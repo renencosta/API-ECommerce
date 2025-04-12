@@ -1,5 +1,6 @@
 ﻿using API_ECommerce.Context;
 using API_ECommerce.Interfaces;
+using API_ECommerce.Models;
 using API_ECommerce.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -26,6 +27,19 @@ namespace API_ECommerce.Controllers
             return Ok(_produtoRepository.ListarTodos());
         }
 
+        [HttpPost]
+        public IActionResult CadastrarProduto(Produto produto)
+        {
+            //1 - colocar o produto no banco de dados
+            _produtoRepository.Cadastrar(produto);
+
+            //2 - salvar a alteração
+            _context.SaveChanges();
+
+            //3 - retorna resultado
+            // codigo 201 -created
+            return Created();
+        }
         
     }
 }

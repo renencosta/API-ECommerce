@@ -4,6 +4,7 @@ using API_ECommerce.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
+
 namespace API_ECommerce.Controllers
 {
     [Route("api/[controller]")]
@@ -16,7 +17,14 @@ namespace API_ECommerce.Controllers
         public ClienteController(EcommerceContext context)
         {
             _context = context;
-            _clienteRepository = new clienteRepository(_context);
+            _clienteRepository = new ClienteRepository(_context);
+        }
+
+        [HttpGet]
+        public IActionResult ListarTodos()
+        {
+            return Ok(_clienteRepository.ListarTodos());
         }
     }
+
 }

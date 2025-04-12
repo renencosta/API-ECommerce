@@ -1,29 +1,28 @@
 ﻿using API_ECommerce.Context;
 using API_ECommerce.Interfaces;
+using API_ECommerce.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using API_ECommerce.Repositories;
 
 namespace API_ECommerce.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PagamentoController : ControllerBase
+    public class PedidoController : ControllerBase
     {
         private readonly EcommerceContext _context;
-        private IPagamentoRepository _pagamentoRepository;
+        private IPedidoRepository _pedidoRepository;
 
-        public PagamentoController(EcommerceContext context)
+        public PedidoController(EcommerceContext context)
         {
             _context = context;
-            _pagamentoRepository = new PagamentoRepository(_context);
+            _pedidoRepository = new PedidoRepository(_context);
         }
 
         [HttpGet]
         public IActionResult ListarTodos()
         {
-            return Ok(_pagamentoRepository.ListarTodos());  
+            return Ok(_pedidoRepository.ListarTodos());
         }
-
     }
 }
