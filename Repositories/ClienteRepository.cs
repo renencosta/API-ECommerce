@@ -33,6 +33,8 @@ namespace API_ECommerce.Repositories
         public void Cadastrar(Cliente cliente)
         {
             _context.Clientes.Add(cliente);
+            //salvar a alteração
+            _context.SaveChanges();
         }
 
         public void Deletar(int id)

@@ -10,13 +10,12 @@ namespace API_ECommerce.Controllers
     [ApiController]
     public class PagamentoController : ControllerBase
     {
-        private readonly EcommerceContext _context;
+        
         private IPagamentoRepository _pagamentoRepository;
 
-        public PagamentoController(EcommerceContext context)
+        public PagamentoController(IPagamentoRepository pagamentoRepository)
         {
-            _context = context;
-            _pagamentoRepository = new PagamentoRepository(_context);
+            _pagamentoRepository = pagamentoRepository;
         }
 
         [HttpGet]

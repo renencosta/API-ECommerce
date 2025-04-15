@@ -30,6 +30,8 @@ namespace API_ECommerce.Repositories
         public void Cadastrar(Produto produto)
         {
            _context.Produtos.Add(produto);
+            //salvar a alteração
+           _context.SaveChanges();
         }
 
         public void Deletar(int id)

@@ -10,13 +10,12 @@ namespace API_ECommerce.Controllers
     [ApiController]
     public class ItemPedidoController : ControllerBase
     {
-        private readonly EcommerceContext _context;
+        
         private IItemPedidoRepository _itemPedidoRepository;
 
-        public ItemPedidoController(EcommerceContext context)
-        {
-            _context = context;
-            _itemPedidoRepository = new ItemPedidoRepository(_context);
+        public ItemPedidoController(IItemPedidoRepository itemPedidoRepository)
+        {            
+            _itemPedidoRepository = itemPedidoRepository;
         }
 
         [HttpGet]
