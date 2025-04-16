@@ -11,7 +11,7 @@ namespace API_ECommerce.Controllers
     [ApiController]
     public class ProdutoController : ControllerBase
     {
-        
+
         private IProdutoRepository _produtoRepository;
 
         //Injeção de Dependência
@@ -37,6 +37,53 @@ namespace API_ECommerce.Controllers
             // codigo 201 -created
             return Created();
         }
+
+        //Buscar produto por ID
+        // /api/produtos/1
+        [HttpGet("{id}")]
+        public IActionResult ListarPorId(int id)
+        {
+            Produto produto = _produtoRepository.BuscarPorID(id);
+
+            if (produto == null)
+            {
+                //404 - NotFound
+                return NotFound();
+            }
+
+            return Ok(produto);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Editar(int id, Produto produto)
+        {
+            try
+            {
+                _produtoRepository.Atualizar(id, produto);
+                return Ok(produto);
+            }
+            catch (Exception ex)
+            {
+                return NotFound("Produto não encontrado.");
+            }
+        }
+
+        [HttpDelete("{id}")]
+
+        public IActionResult Deletar(int id)
+        {
+            try
+            {
+                _produtoRepository.Deletar(id);
+                return NoContent();
+            }
+            //caso de erro
+            catch (Exception ex)
+            {
+                return NotFound("Produto não encontrado.");
+            }
+        }
         
+
     }
 }
