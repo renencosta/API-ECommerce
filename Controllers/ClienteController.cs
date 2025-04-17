@@ -1,5 +1,6 @@
 ﻿using API_ECommerce.Context;
 using API_ECommerce.Interfaces;
+using API_ECommerce.Models;
 using API_ECommerce.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -24,6 +25,54 @@ namespace API_ECommerce.Controllers
         public IActionResult ListarTodos()
         {
             return Ok(_clienteRepository.ListarTodos());
+        }
+
+        [HttpPost]
+        public IActionResult CadastrarCliente(Cliente cliente)
+        {
+            _clienteRepository.Cadastrar(cliente);
+            return Created();
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult BuscarporId(int id)
+        {
+            Cliente cliente = _clienteRepository.BuscarPorId(id);
+
+            if (cliente == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(cliente);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Editar(int id, Cliente cliente)
+        {
+            try
+            {
+                _clienteRepository.Atualizar(id, cliente);
+                return Ok(cliente);
+            }
+            catch (Exception ex)
+            {
+                return NotFound("Cliente não encontrado.");
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Deletar(int id)
+        {
+            try
+            {
+                _clienteRepository.Deletar(id);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return NotFound("Cliente não encontrado.");
+            }
         }
     }
 

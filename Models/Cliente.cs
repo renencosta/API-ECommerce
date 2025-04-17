@@ -15,7 +15,7 @@ public partial class Cliente
 
     public string? Endereco { get; set; }
 
-    public DateOnly? DataCadastro { get; set; }
+    public DateTime? DataCadastro { get; set; }
 
     public virtual ICollection<Pedido> Pedidos { get; set; } = new List<Pedido>();
 }
