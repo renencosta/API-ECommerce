@@ -317,7 +317,6 @@ C:\Users\fic\Downloads\Projeto E-Commerce\API_ECommerce\API_ECommerce\obj\Debug\
 C:\Users\fic\Downloads\Projeto E-Commerce\API_ECommerce\API_ECommerce\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.API_ECommerce.props
 C:\Users\fic\Downloads\Projeto E-Commerce\API_ECommerce\API_ECommerce\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.API_ECommerce.props
 C:\Users\fic\Downloads\Projeto E-Commerce\API_ECommerce\API_ECommerce\obj\Debug\net9.0\staticwebassets.pack.json
-C:\Users\fic\Downloads\Projeto E-Commerce\API_ECommerce\API_ECommerce\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\fic\Downloads\Projeto E-Commerce\API_ECommerce\API_ECommerce\obj\Debug\net9.0\API_ECom.030DC400.Up2Date
 C:\Users\fic\Downloads\Projeto E-Commerce\API_ECommerce\API_ECommerce\obj\Debug\net9.0\API_ECommerce.dll
 C:\Users\fic\Downloads\Projeto E-Commerce\API_ECommerce\API_ECommerce\obj\Debug\net9.0\refint\API_ECommerce.dll
@@ -329,3 +328,4 @@ C:\Users\fic\Downloads\Projeto E-Commerce\API_ECommerce\API_ECommerce\bin\Debug\
 C:\Users\fic\Downloads\Projeto E-Commerce\API_ECommerce\API_ECommerce\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\fic\Downloads\Projeto E-Commerce\API_ECommerce\API_ECommerce\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\fic\Downloads\Projeto E-Commerce\API_ECommerce\API_ECommerce\obj\Debug\net9.0\API_ECommerce.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\fic\Downloads\Projeto E-Commerce\API_ECommerce\API_ECommerce\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

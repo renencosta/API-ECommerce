@@ -30,7 +30,7 @@ namespace API_ECommerce.Repositories
             produtoEncontrado.Nome = produto.Nome;  
             produtoEncontrado.Descricao = produto.Descricao;
             produtoEncontrado.Preco = produto.Preco;
-            produtoEncontrado.CategoiaProduto = produto.CategoiaProduto;
+            produtoEncontrado.CategoriaProduto = produto.CategoriaProduto;
             produtoEncontrado.Imagem = produto.Imagem;
             produtoEncontrado.EstoqueDisponivel = produto.EstoqueDisponivel;
 

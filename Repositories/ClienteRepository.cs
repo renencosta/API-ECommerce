@@ -30,6 +30,7 @@ namespace API_ECommerce.Repositories
             clienteEncontrado.Endereco = cliente.Endereco;
             clienteEncontrado.DataCadastro = cliente.DataCadastro;
             clienteEncontrado.Pedidos = cliente.Pedidos;
+            clienteEncontrado.Senha = cliente.Senha;
 
             _context.SaveChanges();
         }

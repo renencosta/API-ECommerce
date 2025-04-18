@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen();
 //ADDTransient - O C# cria uma instancia nova, toda vez que um método é chamado.
 //ADDScoped - O C# cria uma instancia nova, toda vez que criar um Controller
 //ADDSingleton
-builder.Services.AddScoped<EcommerceContext, EcommerceContext>();
+builder.Services.AddDbContext<EcommerceContext, EcommerceContext>();
 builder.Services.AddTransient<IProdutoRepository, ProdutoRepository>(); 
 builder.Services.AddTransient<IClienteRepository, ClienteRepository>();
 builder.Services.AddTransient<IItemPedidoRepository, ItemPedidoRepository>();
