@@ -15,5 +15,5 @@ public partial class Pagamento
 
     public int IdPedido { get; set; }
 
-    public virtual Pedido IdPedidoNavigation { get; set; } = null!;
+    public virtual Pedido? Pedido { get; set; }
 }

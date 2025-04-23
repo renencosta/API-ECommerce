@@ -130,6 +130,36 @@
         }
       }
     },
+    "/api/Cliente/{email}/{senha}": {
+      "get": {
+        "tags": [
+          "Cliente"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "senha",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/ItemPedido": {
       "get": {
         "tags": [
@@ -220,6 +250,46 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Pagamento"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Pagamento"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Pagamento"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Pagamento"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -428,10 +498,10 @@
             "type": "integer",
             "format": "int32"
           },
-          "idPedidoNavigation": {
+          "pedido": {
             "$ref": "#/components/schemas/Pedido"
           },
-          "idProdutoNavigation": {
+          "produto": {
             "$ref": "#/components/schemas/Produto"
           }
         },
@@ -460,7 +530,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "idPedidoNavigation": {
+          "pedido": {
             "$ref": "#/components/schemas/Pedido"
           }
         },
@@ -490,20 +560,13 @@
             "type": "integer",
             "format": "int32"
           },
-          "idClienteNavigation": {
+          "cliente": {
             "$ref": "#/components/schemas/Cliente"
           },
           "itemPedidos": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/ItemPedido"
-            },
-            "nullable": true
-          },
-          "pagamentos": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Pagamento"
             },
             "nullable": true
           }

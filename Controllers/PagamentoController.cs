@@ -59,5 +59,20 @@ namespace API_ECommerce.Controllers
             }
         }
 
+        [HttpPut("{id}")]
+
+        public IActionResult Editar(int id, Pagamento pagamento)
+        {
+            try
+            {
+                _pagamentoRepository.Atualizar(id, pagamento);
+                return Ok(pagamento);
+            }
+            catch (Exception ex)
+            {
+                return NotFound("Pagamento não encontrado.");
+            }
+        }
+
     }
 }

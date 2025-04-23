@@ -74,6 +74,19 @@ namespace API_ECommerce.Controllers
                 return NotFound("Cliente não encontrado.");
             }
         }
+
+        [HttpGet("{email}/{senha}")]
+        public IActionResult Login(string email, string senha)
+        {
+            var cliente = _clienteRepository.BuscarPorEmailSenha(email, senha);
+
+            if (cliente == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(cliente);
+        }
     }
 
 }

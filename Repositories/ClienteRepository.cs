@@ -29,18 +29,25 @@ namespace API_ECommerce.Repositories
             clienteEncontrado.Telefone = cliente.Telefone;
             clienteEncontrado.Endereco = cliente.Endereco;
             clienteEncontrado.DataCadastro = cliente.DataCadastro;
-            clienteEncontrado.Pedidos = cliente.Pedidos;
             clienteEncontrado.Senha = cliente.Senha;
+
 
             _context.SaveChanges();
         }
 
-        public Cliente BuscarPorEmailSenha(string email, string senha)
+        /// <summary>
+        /// Acessa o Banco de dados e encontra o Cliente com email e senha fornecidos
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="senha"></param>
+        /// <returns>Um cliente ou nulo</returns>
+
+        public Cliente? BuscarPorEmailSenha(string email, string senha)
         {
-            return _context.Clientes.FirstOrDefault(cliente => cliente.Email == email);
+            return _context.Clientes.FirstOrDefault(cliente => cliente.Email == email && cliente.Senha == senha);
         }
 
-        public Cliente BuscarPorId(int id)
+        public Cliente? BuscarPorId(int id)
         {
             return _context.Clientes.FirstOrDefault(cliente => cliente.IdCliente == id);
         }
