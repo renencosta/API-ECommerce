@@ -1,4 +1,5 @@
 ﻿using API_ECommerce.Context;
+using API_ECommerce.DTO;
 using API_ECommerce.Interfaces;
 using API_ECommerce.Models;
 using API_ECommerce.Repositories;
@@ -28,7 +29,7 @@ namespace API_ECommerce.Controllers
         }
 
         [HttpPost]
-        public IActionResult CadastrarCliente(Cliente cliente)
+        public IActionResult CadastrarCliente(CadastrarClienteDto cliente)
         {
             _clienteRepository.Cadastrar(cliente);
             return Created();
@@ -86,6 +87,12 @@ namespace API_ECommerce.Controllers
             }
 
             return Ok(cliente);
+        }
+
+        [HttpGet("/buscar/{nome}")]
+        public IActionResult BuscarPorNome(string nome)
+        {
+            return Ok(_clienteRepository.BuscarClientePorNome(nome));
         }
     }
 

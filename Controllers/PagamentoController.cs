@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using API_ECommerce.Repositories;
 using API_ECommerce.Models;
+using API_ECommerce.DTO;
 
 namespace API_ECommerce.Controllers
 {
@@ -26,7 +27,7 @@ namespace API_ECommerce.Controllers
         }
 
         [HttpPost]
-        public IActionResult CadastrarPagamento(Pagamento pagamento)
+        public IActionResult CadastrarPagamento(CadastrarPagamentoDto pagamento)
         {
             _pagamentoRepository.Cadastrar(pagamento);
             return Created();
