@@ -2,6 +2,7 @@
 using API_ECommerce.DTO;
 using API_ECommerce.Interfaces;
 using API_ECommerce.Models;
+using API_ECommerce.ViewModels;
 
 namespace API_ECommerce.Repositories
 {
@@ -91,9 +92,18 @@ namespace API_ECommerce.Repositories
             _context.SaveChanges();
         }
 
-        public List<Cliente> ListarTodos()
+        public List<ListarClienteViewodel> ListarTodos()
         {
-            return _context.Clientes.OrderBy(c => c.NomeCompleto).ToList();
+
+
+            return _context.Clientes.OrderBy(c => c.NomeCompleto).Select(c => new ListarClienteViewodel
+            {
+                IdCliente = c.IdCliente,
+                NomeCompleto = c.NomeCompleto,
+                Email = c.Email,
+                Endereco= c.Endereco,
+                Telefone= c.Telefone
+            }).ToList();
         }
     }
 }

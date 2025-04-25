@@ -18,12 +18,23 @@ namespace API_ECommerce.Repositories
 
         public void Atualizar(int id, ItemPedido itemPedido)
         {
-            throw new NotImplementedException();
+            ItemPedido itemEncontrado = _context.ItemPedidos.Find(id);
+
+            if (itemEncontrado == null )
+            {
+                throw new Exception();
+            }
+
+            itemEncontrado.Quantidade = itemPedido.Quantidade;
+            itemEncontrado.IdPedido = itemPedido.IdPedido;
+            itemEncontrado.IdProduto = itemPedido.IdProduto;
+
+            _context.SaveChanges();
         }
 
         public ItemPedido BuscarPorId(int id)
         {
-            throw new NotImplementedException();
+            return _context.ItemPedidos.FirstOrDefault(i => i.IdItemPedido == id);
         }
 
         public void Cadastrar(ItemPedido itemPedido)
@@ -35,7 +46,15 @@ namespace API_ECommerce.Repositories
         
         public void Deletar(int id)
         {
-            throw new NotImplementedException();
+            ItemPedido itemEncontrado = _context.ItemPedidos.Find(id);
+
+            if(itemEncontrado == null)
+            {
+                throw new Exception();
+            }
+
+            _context.ItemPedidos.Remove(itemEncontrado);
+            _context.SaveChanges();
         }
 
         public List<ItemPedido> ListarTodos()
