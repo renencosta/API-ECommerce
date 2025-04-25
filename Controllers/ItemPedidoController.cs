@@ -1,4 +1,5 @@
 ﻿using API_ECommerce.Context;
+using API_ECommerce.DTO;
 using API_ECommerce.Interfaces;
 using API_ECommerce.Models;
 using API_ECommerce.Repositories;
@@ -26,7 +27,7 @@ namespace API_ECommerce.Controllers
         }
 
         [HttpPost]
-        public IActionResult Cadastrar(ItemPedido item)
+        public IActionResult Cadastrar(CadastrarItemPedidoDto item)
         {
             _itemPedidoRepository.Cadastrar(item);
             return Created();
@@ -67,6 +68,7 @@ namespace API_ECommerce.Controllers
             try
             {
                 _itemPedidoRepository.Atualizar(id, item);
+                return Ok(item);
             }
             catch (Exception)
             {

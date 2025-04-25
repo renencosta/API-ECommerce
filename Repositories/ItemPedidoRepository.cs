@@ -1,4 +1,5 @@
 ﻿using API_ECommerce.Context;
+using API_ECommerce.DTO;
 using API_ECommerce.Interfaces;
 using API_ECommerce.Models;
 
@@ -37,11 +38,14 @@ namespace API_ECommerce.Repositories
             return _context.ItemPedidos.FirstOrDefault(i => i.IdItemPedido == id);
         }
 
-        public void Cadastrar(ItemPedido itemPedido)
+        public void Cadastrar(CadastrarItemPedidoDto itemPedido)
         {
-            _context.ItemPedidos.Add(itemPedido);
-            //salvar a alteração
-            _context.SaveChanges();
+            ItemPedido item = new ItemPedido
+            {
+                IdPedido = itemPedido.IdPedido,
+                IdProduto = itemPedido.IdProduto,
+                Quantidade = itemPedido.Quantidade,
+            };
         }
         
         public void Deletar(int id)
