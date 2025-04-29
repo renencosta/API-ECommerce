@@ -3,8 +3,10 @@ using API_ECommerce.DTO;
 using API_ECommerce.Interfaces;
 using API_ECommerce.Models;
 using API_ECommerce.Repositories;
+using API_ECommerce.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
 
 
 namespace API_ECommerce.Controllers
@@ -15,6 +17,8 @@ namespace API_ECommerce.Controllers
     {
         
         private IClienteRepository _clienteRepository;
+
+                
 
         public ClienteController(IClienteRepository clienteRepository)
         {
@@ -94,6 +98,7 @@ namespace API_ECommerce.Controllers
         {
             return Ok(_clienteRepository.BuscarClientePorNome(nome));
         }
+
     }
 
 }
