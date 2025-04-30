@@ -329,3 +329,4 @@ C:\Users\fic\Downloads\Projeto E-Commerce\API_ECommerce\API_ECommerce\bin\Debug\
 C:\Users\fic\Downloads\Projeto E-Commerce\API_ECommerce\API_ECommerce\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\fic\Downloads\Projeto E-Commerce\API_ECommerce\API_ECommerce\obj\Debug\net9.0\API_ECommerce.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\fic\Downloads\Projeto E-Commerce\API_ECommerce\API_ECommerce\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\fic\Downloads\Projeto E-Commerce\API_ECommerce\API_ECommerce\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
