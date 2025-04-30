@@ -4,6 +4,7 @@ using API_ECommerce.Interfaces;
 using API_ECommerce.Models;
 using API_ECommerce.Repositories;
 using API_ECommerce.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.OutputCaching;
@@ -27,6 +28,7 @@ namespace API_ECommerce.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult ListarTodos()
         {
             return Ok(_clienteRepository.ListarTodos());
